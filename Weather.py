@@ -16,12 +16,12 @@ def getWeatherAtPlace(place_name):
     response = requests.get(url)
 
     weatherINFO = response.json()
-    #print(weatherINFO) #temporary
+    
     if(weatherINFO["cod"]  == 404):
         print("ERROR PLACE DOES NOT EXIST")
         return    
+    #shows error on line 24 trying to fix
     weatherOBJ = Weather(weatherINFO["temp"],weatherINFO["humidity"])
 
     return weatherOBJ
 
-getWeatherAtPlace('delhi')
