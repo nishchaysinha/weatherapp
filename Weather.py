@@ -24,6 +24,7 @@ def getWeatherAtPlace(place_name):
     #shows error on line 24 trying to fix
     weatherOBJ = Weather(weatherINFO[["temp"]],weatherINFO[["humidity"]])
 #found error they come under main key will fix asap 
+#hopefully fixed it 
     return weatherOBJ
 
 print(getWeatherAtPlace('delhi'))
