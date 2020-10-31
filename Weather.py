@@ -21,7 +21,8 @@ def getWeatherAtPlace(place_name):
         print("ERROR PLACE DOES NOT EXIST")
         return    
     #shows error on line 24 trying to fix
-    weatherOBJ = Weather(weatherINFO["temp"],weatherINFO["humidity"])
-
+    weatherOBJ = Weather(weatherINFO[["temp"]],weatherINFO[["humidity"]])
+#found error they come under main key will fix asap 
     return weatherOBJ
 
+print(getWeatherAtPlace('delhi'))
