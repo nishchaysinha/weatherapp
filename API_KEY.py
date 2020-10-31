@@ -1,0 +1,1 @@
+openweathermap='a74bdb2631e3666dd47fd8b01e4b76fe'
