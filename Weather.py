@@ -1,4 +1,5 @@
 import requests, json
+import API_KEY
 
 class Weather:
     def __init__(self,temperatureIN,humidityIN):
@@ -10,7 +11,7 @@ def getWeatherAtPlace(place_name,API_KEY):
     place_name_LC = place_name.lower()
     url = "http://api.openweathermap.org/data/2.5/weather?"
 
-    url = url + "appid=" + API_KEY +  "&q=" + place_name_LC
+    url = url + "appid=" + API_KEY.openweathermap +  "&q=" + place_name_LC
     
     response = requests.get(url)
 
