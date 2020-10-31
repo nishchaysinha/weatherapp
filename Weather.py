@@ -15,7 +15,8 @@ def getWeatherAtPlace(place_name):
     
     response = requests.get(url)
 
-    weatherINFO = response.json()
+    allINFO = response.json()
+    weatherINFO = allINFO['main']
     
     if(weatherINFO["cod"]  == 404):
         print("ERROR PLACE DOES NOT EXIST")
