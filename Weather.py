@@ -7,16 +7,16 @@ class Weather:
         self.humidity = humidityIN
     
 
-def getWeatherAtPlace(place_name,API_KEY):
+def getWeatherAtPlace(place_name):
     place_name_LC = place_name.lower()
     url = "http://api.openweathermap.org/data/2.5/weather?"
 
-    url = url + "appid=" + API_KEY.openweathermap +  "&q=" + place_name_LC
+    url = url + "appid=" + API_KEY.openweathermap2 +  "&q=" + place_name_LC
     
     response = requests.get(url)
 
     weatherINFO = response.json()
-
+    #print(weatherINFO) #temporary
     if(weatherINFO["cod"]  == 404):
         print("ERROR PLACE DOES NOT EXIST")
         return    
@@ -24,3 +24,4 @@ def getWeatherAtPlace(place_name,API_KEY):
 
     return weatherOBJ
 
+getWeatherAtPlace('delhi')
