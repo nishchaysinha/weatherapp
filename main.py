@@ -1,5 +1,7 @@
 import pymysql
 import time
+import requests
+import json
 
 connection=pymysql.connect(host='127.0.0.1',
                              user='root',
@@ -7,5 +9,6 @@ connection=pymysql.connect(host='127.0.0.1',
                              db='weather')
 
 with connection.cursor() as cursor:
-    base-cmd='INSERT INTO TABLE weather VALUES '
-    cursor.execute(base-cmd + "()")
+    defcmd='INSERT INTO TABLE weather VALUES '
+    cursor.execute(defcmd + "()")
+    
