@@ -29,8 +29,7 @@ def getWeatherAtPlace(place_name):
     return weatherOBJ
 
 
-'''
+
 x=getWeatherAtPlace('noida')
 print(x)
 print(type(x))
-'''
