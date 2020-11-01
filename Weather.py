@@ -17,14 +17,20 @@ def getWeatherAtPlace(place_name):
 
     allINFO = response.json()
     weatherINFO = allINFO['main']
-    
-    if(weatherINFO["cod"]  == 404):
+    sysINFO = allINFO['sys'] #info here for future expandability
+
+    if(allINFO["cod"]  == 404):
         print("ERROR PLACE DOES NOT EXIST")
-        return    
-    #shows error on line 24 trying to fix
-    weatherOBJ = Weather(weatherINFO[["temp"]],weatherINFO[["humidity"]])
-#found error they come under main key will fix asap 
-#hopefully fixed it 
+        return
+        
+    weatherOBJ = (weatherINFO["temp"],weatherINFO["humidity"])
+#fixed error dict referencing error 
+    print(weatherINFO)
     return weatherOBJ
 
-print(getWeatherAtPlace('delhi'))
+
+'''
+x=getWeatherAtPlace('delhi')
+print(x)
+print(type(x))
+'''
