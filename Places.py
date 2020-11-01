@@ -24,5 +24,5 @@ class Places:
     def getWeather(self, API_KEY):
         weatherList = []
         for place in self.places:
-            weatherList.append(Weather.getWeatherAtPlace(place,API_KEY))
+            weatherList.append(Weather.getWeatherAtPlace(place))
 
