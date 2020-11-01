@@ -30,7 +30,7 @@ def getWeatherAtPlace(place_name):
 
 
 '''
-x=getWeatherAtPlace('delhi')
+x=getWeatherAtPlace('noida')
 print(x)
 print(type(x))
 '''
