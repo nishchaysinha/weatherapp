@@ -17,12 +17,12 @@ def getWeatherAtPlace(place_name):
 
     allINFO = response.json()
     weatherINFO = allINFO['main']
-    sysINFO = allINFO['sys'] #info here for future expandability
+    #sysINFO = allINFO['sys'] #info here for future expandability
 
     if(allINFO["cod"]  == 404):
         print("ERROR PLACE DOES NOT EXIST")
         return
-        
+
     weatherOBJ = (weatherINFO["temp"],weatherINFO["humidity"])
 #fixed error dict referencing error 
     print(weatherINFO)
