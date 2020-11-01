@@ -27,9 +27,3 @@ def getWeatherAtPlace(place_name):
 #fixed error dict referencing error 
     print(weatherINFO)
     return weatherOBJ
-
-
-
-x=getWeatherAtPlace('noida')
-print(x)
-print(type(x))
