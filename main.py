@@ -4,7 +4,7 @@ import requests
 import json
 import API_KEY
 
-owmapi=API_KEY.openweathermap
+owmapi=API_KEY.openweathermap1
 baseurl="http://api.openweathermap.org/data/2.5/weather?"
 precityurl=baseurl + "appid" + owmapi + "&q="
 
