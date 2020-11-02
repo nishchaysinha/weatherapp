@@ -9,3 +9,4 @@ window = uic.loadUi("main_window.ui")
 
 window.show()
 app.exec_()
+
