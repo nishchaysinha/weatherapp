@@ -1,0 +1,8 @@
+'''
+todo
+-need to display data on app window
+-need to link data to on mysql
+-need to add a data refreshing service that refreshes every 1 minute 
+-need to implement place autocomplete feature
+-need to add animations if possible(not a minimum requirement)
+'''
