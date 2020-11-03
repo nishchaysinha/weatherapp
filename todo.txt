@@ -5,4 +5,11 @@ todo
 -need to add a data refreshing service that refreshes every 1 minute 
 -need to implement place autocomplete feature
 -need to add animations if possible(not a minimum requirement)
+
+PLANNING TO USE FIREBASE
+should be easy to set up and just need to confirm with kirti tripython if its valid or not
+
+
+
+
 '''
