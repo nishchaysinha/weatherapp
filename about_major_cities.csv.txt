@@ -1,0 +1,2 @@
+The file is from https://datahub.io/core/world-cities
+it has columns: name(of city) | country(to which city belongs) | subcountry(state/county/etc) | geonameid(not using so don't bother)
