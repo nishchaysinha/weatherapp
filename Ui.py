@@ -12,9 +12,6 @@ class MainWindow(QW.QMainWindow):
         super().__init__(*args,**kwargs)
         uic.loadUi("main_window.ui",self)
         
-        """self.textedit = self.findChild(QTextEdit, "textEdit")
-        self.textedit = self.findChild(QTextEdit, "result_text")
-        self.button = self.findChild(QPushButton, "pushButton")"""
         self.pushButton.clicked.connect(self.clickedBtn)
 
     def clickedBtn(self):
