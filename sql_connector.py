@@ -25,10 +25,10 @@ class simple_sql:
                 if(firstRow == True):
                     firstRow = False
                 else:
-                    cityTuple = (row[0],)
+                    cityTuple = (row[0].lower(),)
                     should_not_add = False
                     for char in cityTuple[0]:
-                        if(char.lower() not in regular_alphabet):
+                        if(char not in regular_alphabet):
                             should_not_add = True
                             break
                     if(should_not_add == True or cityTuple in cities):
