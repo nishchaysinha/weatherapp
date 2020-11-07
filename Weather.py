@@ -23,7 +23,7 @@ def getWeatherAtPlace(place_name):
         print("ERROR PLACE DOES NOT EXIST")
         return
 
-    weatherOBJ = (weatherINFO["temp"],weatherINFO["humidity"])
+    weatherOBJ = (str(weatherINFO["temp"]-273.16)+"°C",weatherINFO["humidity"])
 #fixed error dict referencing error 
-    print(weatherINFO)
+    #print(weatherINFO)
     return weatherOBJ
