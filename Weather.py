@@ -12,18 +12,19 @@ def getWeatherAtPlace(place_name):
     url = "http://api.openweathermap.org/data/2.5/weather?"
 
     url = url + "appid=" + API_KEY.openweathermap2 +  "&q=" + place_name_LC
-    
+    print(url)
     response = requests.get(url)
 
     allINFO = response.json()
-    weatherINFO = allINFO['main']
-    #sysINFO = allINFO['sys'] #info here for future expandability
+    
 
-    if(allINFO["cod"]  == 404):
+    if (allINFO["cod"]  != "404"):
+        weatherINFO = allINFO['main']
+        #sysINFO = allINFO['sys'] #info here for future expandability
+        weatherOBJ = (str(round(weatherINFO["temp"]-273.16))+"°C",str(weatherINFO["humidity"])+"% Humidity")
+    #fixed error dict referencing error 
+        #print(weatherINFO)
+        return weatherOBJ
+    else:
         print("ERROR PLACE DOES NOT EXIST")
-        return
-
-    weatherOBJ = (str(weatherINFO["temp"]-273.16)+"°C",weatherINFO["humidity"])
-#fixed error dict referencing error 
-    #print(weatherINFO)
-    return weatherOBJ
+        return "Not a Real Place"
