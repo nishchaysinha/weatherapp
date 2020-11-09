@@ -5,7 +5,7 @@ regular_alphabet = "abcdefghijklmnopqrstuvwxyz -"
 
 DATABASE_NAME_NEVER_CHANGE = "cs_project_ns_ys_ma_2020_sqlDB"
 
-#as of 6th november, search history and saved places are not implemented, they should only be implemented after everything is complete
+#as of 6th november, search history and saved places are not implemented, they should only be implemented after everything is complete si-nishchay
 SQL_TABLENAME_NEVER_CHANGE = {"places" : "PLACES","searches" : "SEARCHES", "saved" : "SAVED"}
 
 MAJOR_CITIES_FILENAME_NEVER_CHANGE = "major_cities.csv"

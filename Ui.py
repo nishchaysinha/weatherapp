@@ -24,4 +24,3 @@ app = QW.QApplication(sys.argv)
 window = MainWindow()
 window.show()
 app.exec_()
-
