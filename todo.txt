@@ -1,15 +1,8 @@
 '''
-todo
--need to display data on app window
--need to link data to on mysql
--need to add a data refreshing service that refreshes every 1 minute 
--need to implement place autocomplete feature
--need to add animations if possible(not a minimum requirement)
+FRESH TODO 9-NOV
+-need to link sql to ui file 
+##i have github pro now so i have access to cloud computing assets 
 
-PLANNING TO USE FIREBASE
-should be easy to set up and just need to confirm with kirti tripython if its valid or not
-
-
-
+-plan to update the ui a bit?
 
 '''
