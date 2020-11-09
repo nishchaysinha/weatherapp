@@ -8,6 +8,7 @@ class Weather:
     
 
 def getWeatherAtPlace(place_name):
+
     place_name_LC = place_name.lower()
     url = "http://api.openweathermap.org/data/2.5/weather?"
 
@@ -16,15 +17,16 @@ def getWeatherAtPlace(place_name):
     response = requests.get(url)
 
     allINFO = response.json()
-    
+    #cod 400 dekho madarchodo
 
-    if (allINFO["cod"]  != "404"):
+    if (allINFO["cod"]  == "404") or (allINFO["cod"] =='400'):
+        print("ERROR PLACE DOES NOT EXIST")
+        return "Not a Real Place"
+    else:
+
         weatherINFO = allINFO['main']
         #sysINFO = allINFO['sys'] #info here for future expandability
         weatherOBJ = (str(round(weatherINFO["temp"]-273.16))+"°C",str(weatherINFO["humidity"])+"% Humidity")
-    #fixed error dict referencing error 
+        #fixed error dict referencing error 
         #print(weatherINFO)
         return weatherOBJ
-    else:
-        print("ERROR PLACE DOES NOT EXIST")
-        return "Not a Real Place"
