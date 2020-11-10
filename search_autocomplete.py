@@ -1,13 +1,17 @@
+'''
 import mysql.connector as sql
 import time as t
-from fast_autocomplete import AutoComplete
 
+sql = sql.connect(host = "localhost",user = "root", password = "")
+cursor = sql.cursor()
+cursor.execute('use cs_project_ns_ys_ma_2020_sqlDB')
+#loop for continually giving suggestions ;)
+def autocompletepoopoo():
+    i=""
+    while i!='!':
+        i+=str(input("Search fuckface:  "))
+        print(cursor.execute('SeLeCt * FrOm PLACES WhErE name like '+'"'+i+'%";'))
+
+
+autocompletepoopoo()
 '''
-tyrna make an autocomplete recc func
-form ui side i need an extra variable that goes from 0-1 when a go is hit 
-and i need one for thing that the text box should be updated after every key press
-so that way 
-i could link my search query in the back end which will make life easier way easier
-
-'''
-
