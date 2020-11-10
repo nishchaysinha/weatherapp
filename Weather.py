@@ -12,7 +12,7 @@ def getWeatherAtPlace(place_name):
     url = "http://api.openweathermap.org/data/2.5/weather?"
 
     url = url + "appid=" + API_KEY.openweathermap2 +  "&q=" + place_name_LC
-    #print(url) prototyping fuck offf
+    print(url) #prototyping fuck offf
     response = requests.get(url)
     allINFO = response.json()
     if (allINFO["cod"]  == "404") or (allINFO["cod"] =='400'):

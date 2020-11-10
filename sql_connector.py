@@ -65,7 +65,7 @@ class simple_sql:
 
         self.__createDB()
 
-        self.sql = mscon.connect(host = "localhost", user = usernameIN, password= passwordIN,database=DATABASE_NAME_NEVER_CHANGE)
+        self.sql = mscon.connect(host = "127.0.0.1", user = usernameIN, password= passwordIN,database=DATABASE_NAME_NEVER_CHANGE)
         self.sql_cursor = self.sql.cursor()
 
         self.__ensureTablesExist()
