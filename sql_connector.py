@@ -52,8 +52,6 @@ class simple_sql:
         if(tables_exist == False):
             self.__initializeAllTables()
 
-        
-
     def __init__(self):
         usernameIN = input("Enter your mysql username")
         passwordIN = input("Enter your password")
@@ -78,6 +76,5 @@ class simple_sql:
             this makes it safe to use it. (it would give an error if it did not exist)
             then we just reset our sql and sql cursor to use our database.
         """
-
 
 db = simple_sql()
