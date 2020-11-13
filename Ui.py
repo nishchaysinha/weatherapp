@@ -13,11 +13,17 @@ class MainWindow(QW.QMainWindow):
         uic.loadUi("main_window.ui",self)
         
         self.pushButton.clicked.connect(self.clickedBtn)
+        self.saveButton.clicked.connect(self.saveBtn)
 
     def clickedBtn(self):
         place = self.textEdit.toPlainText()
         place_lc = place.lower()
         self.result_text.setPlainText(convertTuple(Weather.getWeatherAtPlace(place_lc)))
+    
+    def saveBtn(self):
+        '''
+        entering soon
+        '''
 
 
 app = QW.QApplication(sys.argv)
