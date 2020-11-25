@@ -30,6 +30,9 @@ def getWeatherAtPlace(place_name):
             sqlObj.addToSaved(place_name_LC)
         except:
             print("You fool!, you thought I would not see this coming?")
+            #instead of doing nothing, it will now create the place in the database if it exists with the weather api
+            sqlObj.addToPlaces(place_name_LC)
+            sqlObj.addToSaved(place_name_LC)
         weatherINFO = allINFO['main']
         #sysINFO = allINFO['sys'] #info here for future expandability
         weatherOBJ = (str(round(weatherINFO["temp"]-273.15))+"°C",str(weatherINFO["humidity"])+"% Humidity")

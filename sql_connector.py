@@ -25,17 +25,10 @@ class simple_sql:
                 if(firstRow == True):
                     firstRow = False
                 else:
-                    cityTuple = (row[0].lower(),)
-                    should_not_add = False
-                    for char in cityTuple[0]:
-                        if(char not in regular_alphabet):
-                            should_not_add = True
-                            break
-                    if(should_not_add == True or cityTuple in cities):
-                        continue
+                    cityTuple = (row[0],)   # do not need to do anything, because pre-run scripts lowered and wrote required data to file
                     cities.append(cityTuple)
         
-        self.sql_cursor.executemany("INSERT INTO PLACES(name) VALUES (%s)",cities)
+        self.sql_cursor.executemany("INSERT INTO " + SQL_TABLENAME_NEVER_CHANGE["places"] + "(name) VALUES (%s)",cities)
         self.sql.commit()
 
     def __initializeAllTables(self):
@@ -65,15 +58,18 @@ class simple_sql:
         if(tables_exist == False):
             self.__initializeAllTables()
         
-    
+    def addToPlaces(self,placename):
+        self.sql_cursor.execute("INSERT INTO " + SQL_TABLENAME_NEVER_CHANGE["places"] + " VALUES("+'"' +placename+'"'+ ")")
+        self.sql.commit()
+
     def addToSearches(self,searchname):
+        self.sql_cursor.execute("INSERT INTO " + SQL_TABLENAME_NEVER_CHANGE["searches"] + " values(" + '"' + searchname + '",' + str(self.searchesOrderLast + 1) + ")" )
         self.searchesOrderLast  +=1
-        self.sql_cursor.execute("INSERT INTO " + SQL_TABLENAME_NEVER_CHANGE["searches"] + " values(" + '"' + searchname + '",' + str(self.searchesOrderLast) + ")" )
         self.sql.commit()
     
     def addToSaved(self,placename):
+        self.sql_cursor.execute("INSERT INTO " + SQL_TABLENAME_NEVER_CHANGE["saved"] + " values(" + '"' + placename + '",'  + str(self.savedOrderLast + 1) + ")" )
         self.savedOrderLast += 1
-        self.sql_cursor.execute("INSERT INTO " + SQL_TABLENAME_NEVER_CHANGE["saved"] + " values(" + '"' + placename + '",'  + str(self.savedOrderLast) + ")" )
         self.sql.commit()
 
     def __init__(self):
