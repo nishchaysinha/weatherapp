@@ -2,7 +2,7 @@ import sys
 from PyQt5 import uic, QtGui, QtCore 
 from PyQt5 import QtWidgets as QW
 import Weather
-def convertTuple(tup): 
+def convertTupleToString(tup): 
     x =  " ".join(str(tup)) 
     return str(x)
 
@@ -18,7 +18,9 @@ class MainWindow(QW.QMainWindow):
     def clickedBtn(self):
         place = self.textEdit.toPlainText()
         place_lc = place.lower()
-        self.result_text.setPlainText(convertTuple(Weather.getWeatherAtPlace(place_lc)))
+        weather_call_result = Weather.getWeatherAtPlace(place_lc)
+        self.result_text.setPlainText(convertTupleToString(weather_call_result))
+        
     
     def saveBtn(self):
         '''

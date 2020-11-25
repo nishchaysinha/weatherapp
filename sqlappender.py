@@ -52,7 +52,8 @@ class save:
 
         self.username = usernameIN
         self.password = passwordIN
-        self.sql = mscon.connect(host = "localhost",user = usernameIN, password = passwordIN)
+        self.sql = mscon.connect(host = "127.0.0.1",user = usernameIN, password = passwordIN)   
+        #because "localhost" does not work on other platforms
         self.sql_cursor = self.sql.cursor()
 
         self.__createDB()
