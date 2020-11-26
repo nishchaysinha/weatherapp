@@ -32,8 +32,6 @@ class MainWindow(QW.QMainWindow):
         completer = QW.QCompleter(autocomplete_cities)
         searchbar = self.ui.findChild(QW.QLineEdit, "lineEdit")
         searchbar.setCompleter(completer)
-        #uncomment the above line once you find a way to use QW.QLineEdit instead of QW.QTextEdit for searchbar
-        #only then can it use the completer
 
 
         self.pushButton.clicked.connect(self.clickedBtn)
