@@ -41,7 +41,7 @@ class MainWindow(QW.QMainWindow):
 
 
     def clickedBtn(self):
-        place = self.lineEdit.toPlainText()
+        place = self.lineEdit.text()
         place_lc = place.lower()
         weather_call_result = Weather.getWeatherAtPlace(place_lc)
         self.result_text.setPlainText(convertTupleToString(weather_call_result))
