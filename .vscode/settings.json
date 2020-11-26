@@ -1,3 +1,7 @@
 {
+<<<<<<< Updated upstream
     "python.pythonPath": "C:\\Users\\munee\\AppData\\Local\\Continuum\\anaconda3\\python.exe"
+=======
+    "python.pythonPath": "/usr/local/opt/python@3.9/bin/python3.9"
+>>>>>>> Stashed changes
 }
