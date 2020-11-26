@@ -30,8 +30,8 @@ class MainWindow(QW.QMainWindow):
         
 
         completer = QW.QCompleter(autocomplete_cities)
-        searchbar = self.ui.findChild(QW.QTextEdit, "textEdit")
-        #searchbar.setCompleter(completer)
+        searchbar = self.ui.findChild(QW.QLineEdit, "textEdit")
+        searchbar.setCompleter(completer)
         #uncomment the above line once you find a way to use QW.QLineEdit instead of QW.QTextEdit for searchbar
         #only then can it use the completer
 
@@ -41,7 +41,7 @@ class MainWindow(QW.QMainWindow):
 
 
     def clickedBtn(self):
-        place = self.textEdit.toPlainText()
+        place = self.lineEdit.toPlainText()
         place_lc = place.lower()
         weather_call_result = Weather.getWeatherAtPlace(place_lc)
         self.result_text.setPlainText(convertTupleToString(weather_call_result))
