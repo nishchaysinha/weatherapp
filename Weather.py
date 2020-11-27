@@ -39,3 +39,6 @@ def getWeatherAtPlace(place_name):
         #fixed error dict referencing error
         #print(weatherINFO)
         return weatherOBJ
+
+def loadSavedPlaces():
+    return sqlObj.getLastSaved()

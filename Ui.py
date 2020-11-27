@@ -5,6 +5,8 @@ import Weather
 import csv
 
 
+savedPlaces = Weather.loadSavedPlaces()
+
 autocomplete_cities = []
 with open("autocomplete_cities.csv",encoding = 'utf-8') as file:
     reader = csv.reader(file)

@@ -72,6 +72,19 @@ class simple_sql:
         self.savedOrderLast += 1
         self.sql.commit()
 
+    def getLastSaved(self):
+        self.sql_cursor.execute("SELECT search_name FROM " + SQL_TABLENAME_NEVER_CHANGE["saved"] + " ORDER BY order_val DESC")
+        savedTuple = self.sql_cursor.fetchall()
+        if(savedTuple == None):
+            return ("No Saves Yet",)
+        for i in range(0,len(savedTuple)):
+            savedTuple[i] = savedTuple[i][0]
+        if(len(savedTuple) > 10):
+            tupleToReturn = savedTuple[:10]
+            return tupleToReturn 
+        else:
+            return savedTuple
+
     def __init__(self):
         usernameIN = input("Enter your mysql username")
         passwordIN = input("Enter your password")
