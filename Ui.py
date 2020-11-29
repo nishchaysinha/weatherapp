@@ -48,9 +48,7 @@ class MainWindow(QW.QMainWindow):
     
     
     def saveBtn(self):
-        '''
-        entering soon
-        '''
+        
 
 
 app = QW.QApplication(sys.argv)
