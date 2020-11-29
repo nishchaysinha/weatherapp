@@ -26,13 +26,13 @@ def getWeatherAtPlace(place_name):
         print("ERROR PLACE DOES NOT EXIST")
         return ("!Not a Real Place")
     else:
-        try:
-            sqlObj.addToSaved(place_name_LC)
-        except:
-            print("You fool!, you thought I would not see this coming?")
+     #   try:
+      #      sqlObj.addToSaved(place_name_LC)
+       # except:
+        #    print("You fool!, you thought I would not see this coming?")
             #instead of doing nothing, it will now create the place in the database if it exists with the weather api
-            sqlObj.addToPlaces(place_name_LC)
-            sqlObj.addToSaved(place_name_LC)
+         #   sqlObj.addToPlaces(place_name_LC)
+          #  sqlObj.addToSaved(place_name_LC)
         weatherINFO = allINFO['main']
         #sysINFO = allINFO['sys'] #info here for future expandability
         weatherOBJ = (str(round(weatherINFO["temp"]-273.15))+"°C",str(weatherINFO["humidity"])+"% Humidity")
@@ -42,3 +42,18 @@ def getWeatherAtPlace(place_name):
 
 def loadSavedPlaces():
     return sqlObj.getLastSaved()
+
+def checkIfActualPlace(place_name):
+    if(place_name == ''):
+        return False
+    place_name_LC = place_name.lower()
+    url = "http://api.openweathermap.org/data/2.5/weather?"
+
+    url = url + "appid=" + API_KEY.openweathermap2 +  "&q=" + place_name_LC
+
+    response = requests.get(url)
+    info = response.json()
+
+    if(info["cod"] == "404" or info["cod"] == '400'):
+        return False
+    return True

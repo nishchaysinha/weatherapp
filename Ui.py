@@ -38,6 +38,15 @@ class MainWindow(QW.QMainWindow):
         self.pushButton.clicked.connect(self.clickedBtn)
         self.saveButton.clicked.connect(self.saveBtn)
 
+        self.saved_table_gui = self.ui.findChild(QW.QTableWidget,"tableWidget")
+        atMaxLast10saved = Weather.loadSavedPlaces()
+        '''
+        r = 0
+        for i in atMaxLast10saved:
+            self.saved_table_gui.item(r,0).setText(i)
+            
+            r+=1
+        '''
 
     def clickedBtn(self):
         place = self.lineEdit.text()
@@ -48,6 +57,16 @@ class MainWindow(QW.QMainWindow):
     
     
     def saveBtn(self):
+        try:
+            place = self.lineEdit.text()
+            place_lc = place.lower()
+            Weather.sqlObj.addToSaved(place_lc)
+        except:
+            if(Weather.checkIfActualPlace(place_lc)):
+                Weather.sqlObj.addToPlaces(place_lc)
+                Weather.sqlObj.addToSaved(place_lc)
+            
+
         
 
 
