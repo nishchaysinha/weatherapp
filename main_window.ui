@@ -112,6 +112,9 @@
         <height>41</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">font: 26pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="history_tab">

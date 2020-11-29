@@ -34,7 +34,7 @@ class MainWindow(QW.QMainWindow):
         searchbar = self.ui.findChild(QW.QLineEdit, "lineEdit")
         searchbar.setCompleter(completer)
 
-
+        self.lineEdit.returnPressed.connect(self.clickedBtn)
         self.pushButton.clicked.connect(self.clickedBtn)
         self.saveButton.clicked.connect(self.saveBtn)
 
@@ -45,6 +45,7 @@ class MainWindow(QW.QMainWindow):
         weather_call_result = Weather.getWeatherAtPlace(place_lc)
         self.result_text.setPlainText(convertTupleToString(weather_call_result))
         
+    
     
     def saveBtn(self):
         '''
