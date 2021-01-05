@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="Background">
+    <file>104588-glitch_art-pixel_sorting-clouds.jpg</file>
+    <file>download (7).jpg</file>
     <file>background.jpg</file>
   </qresource>
 </RCC>

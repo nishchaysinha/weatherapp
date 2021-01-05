@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>600</height>
+    <height>582</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -100,6 +100,24 @@
        <string notr="true">font: 26pt &quot;MS Shell Dlg 2&quot;;</string>
       </property>
      </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>-890</x>
+        <y>-540</y>
+        <width>1691</width>
+        <height>1071</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Background/104588-glitch_art-pixel_sorting-clouds.jpg&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <zorder>label_2</zorder>
+     <zorder>label</zorder>
+     <zorder>pushButton</zorder>
+     <zorder>result_text</zorder>
+     <zorder>lineEdit</zorder>
     </widget>
    </widget>
   </widget>
@@ -115,6 +133,8 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="Assets/Assets.qrc"/>
+ </resources>
  <connections/>
 </ui>
