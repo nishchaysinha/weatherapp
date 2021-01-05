@@ -3,7 +3,6 @@ import API_KEY
 import sql_connector as sqlman #codename for sql-yuvraj
 
 sqlObj = sqlman.simple_sql()
-
 class Weather:
     def __init__(self,temperatureIN,humidityIN):
         self.temp = temperatureIN

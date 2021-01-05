@@ -91,7 +91,7 @@ class simple_sql:
 
         self.username = usernameIN
         self.password = passwordIN
-        self.sql = mscon.connect(host = "localhost",user = usernameIN, password = passwordIN)
+        self.sql = mscon.connect(host = "127.0.0.1",user = usernameIN, password = passwordIN)
         self.sql_cursor = self.sql.cursor()
 
         self.searchesOrderLast = 0  #these will be updated to actual values in the ensure tables exist function (they are for ordering)

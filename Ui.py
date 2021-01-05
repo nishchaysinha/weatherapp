@@ -36,7 +36,7 @@ class MainWindow(QW.QMainWindow):
 
         self.lineEdit.returnPressed.connect(self.clickedBtn)
         self.pushButton.clicked.connect(self.clickedBtn)
-        self.saveButton.clicked.connect(self.saveBtn)
+        #self.saveButton.clicked.connect(self.saveBtn)
 
         self.saved_table_gui = self.ui.findChild(QW.QTableWidget,"tableWidget")
         atMaxLast10saved = Weather.loadSavedPlaces()
