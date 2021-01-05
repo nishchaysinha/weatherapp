@@ -1,6 +1,7 @@
 import sys
 from PyQt5 import uic, QtGui, QtCore 
 from PyQt5 import QtWidgets as QW
+from PyQt5.QtGui import QPixmap 
 import Weather
 import csv
 
@@ -28,14 +29,14 @@ class MainWindow(QW.QMainWindow):
     def __init__(self, *args, **kwargs):
         super().__init__(*args,**kwargs)
         self.ui = uic.loadUi("main_window.ui",self)
-        
 
         completer = QW.QCompleter(autocomplete_cities)
         searchbar = self.ui.findChild(QW.QLineEdit, "lineEdit")
         searchbar.setCompleter(completer)
-
         self.lineEdit.returnPressed.connect(self.clickedBtn)
         self.pushButton.clicked.connect(self.clickedBtn)
+        self.pixmap = QPixmap('/Users/nishchay/Github/weatherapp/Assets/104588-glitch_art-pixel_sorting-clouds.jpg')
+        self.label_2.setPixmap(self.pixmap) 
         #self.saveButton.clicked.connect(self.saveBtn)
 
         self.saved_table_gui = self.ui.findChild(QW.QTableWidget,"tableWidget")
