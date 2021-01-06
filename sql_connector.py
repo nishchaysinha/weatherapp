@@ -84,6 +84,11 @@ class simple_sql:
             return tupleToReturn 
         else:
             return savedTuple
+    
+    def loadPlaces(self):
+        self.sql_cursor.execute('Select * from PLACES')
+        data = self.sql_cursor.fetchall()
+        return data
 
     def __init__(self):
         usernameIN = input("Enter your mysql username")

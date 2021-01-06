@@ -25,20 +25,21 @@ def getWeatherAtPlace(place_name):
         print("ERROR PLACE DOES NOT EXIST")
         return ("!Not a Real Place")
     else:
-     #   try:
-      #      sqlObj.addToSaved(place_name_LC)
-       # except:
-        #    print("You fool!, you thought I would not see this coming?")
+        try:
+            sqlObj.addToSaved(place_name_LC)
+        except:
+            print("You fool!, you thought I would not see this coming?")
             #instead of doing nothing, it will now create the place in the database if it exists with the weather api
-         #   sqlObj.addToPlaces(place_name_LC)
-          #  sqlObj.addToSaved(place_name_LC)
+            sqlObj.addToPlaces(place_name_LC)
+            sqlObj.addToSaved(place_name_LC)
         weatherINFO = allINFO['main']
         #sysINFO = allINFO['sys'] #info here for future expandability
         weatherOBJ = (str(round(weatherINFO["temp"]-273.15))+"°C",str(weatherINFO["humidity"])+"% Humidity")
         #fixed error dict referencing error
         #print(weatherINFO)
         return weatherOBJ
-
+def loadPlacesSQL():
+    return sqlObj.loadPlaces()
 def loadSavedPlaces():
     return sqlObj.getLastSaved()
 

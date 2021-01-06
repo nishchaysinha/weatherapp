@@ -1,13 +1,14 @@
 import sys
 from PyQt5 import uic, QtGui, QtCore 
 from PyQt5 import QtWidgets as QW
-from PyQt5.QtGui import QPixmap 
+ 
 import Weather
 import csv
 
 
 
 autocomplete_cities = []
+'''
 with open("autocomplete_cities.csv",encoding = 'utf-8') as file:
     reader = csv.reader(file)
     first = True
@@ -17,6 +18,11 @@ with open("autocomplete_cities.csv",encoding = 'utf-8') as file:
             continue
         else:
             autocomplete_cities.append(row[0].lower())
+ '''       
+places = Weather.loadPlacesSQL()
+for place in places:
+    autocomplete_cities.append(place[0])
+
 
 
 
@@ -28,6 +34,7 @@ class MainWindow(QW.QMainWindow):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args,**kwargs)
+        global autocomplete_cities
         self.ui = uic.loadUi("main_window.ui",self)
 
         completer = QW.QCompleter(autocomplete_cities)
@@ -35,7 +42,7 @@ class MainWindow(QW.QMainWindow):
         searchbar.setCompleter(completer)
         self.lineEdit.returnPressed.connect(self.clickedBtn)
         self.pushButton.clicked.connect(self.clickedBtn)
-        self.pixmap = QPixmap('/Users/nishchay/Github/weatherapp/Assets/104588-glitch_art-pixel_sorting-clouds.jpg')
+        self.pixmap = QtGui.QPixmap('/Users/nishchay/Github/weatherapp/Assets/104588-glitch_art-pixel_sorting-clouds.jpg')
         self.label_2.setPixmap(self.pixmap) 
         #self.saveButton.clicked.connect(self.saveBtn)
 
