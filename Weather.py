@@ -8,6 +8,7 @@ class Weather:
         self.temp = temperatureIN
         self.humidity = humidityIN
     
+
 def getWeatherAtPlace(place_name):
 
     place_name_LC = place_name.lower()

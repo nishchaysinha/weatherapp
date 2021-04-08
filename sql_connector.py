@@ -91,8 +91,8 @@ class simple_sql:
         return data
 
     def __init__(self):
-        usernameIN = input("Enter your mysql username")
-        passwordIN = input("Enter your password")
+        usernameIN = 'root'
+        passwordIN = ''
 
         self.username = usernameIN
         self.password = passwordIN
