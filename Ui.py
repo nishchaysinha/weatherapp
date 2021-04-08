@@ -35,7 +35,7 @@ class MainWindow(QW.QMainWindow):
     def __init__(self, *args, **kwargs):
         super().__init__(*args,**kwargs)
         global autocomplete_cities
-        self.ui = uic.loadUi("main_window.ui",self)
+        self.ui = uic.loadUi("main_window_improved.ui",self)
 
         completer = QW.QCompleter(autocomplete_cities)
         searchbar = self.ui.findChild(QW.QLineEdit, "lineEdit")
